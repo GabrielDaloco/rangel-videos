@@ -1,0 +1,22 @@
+{
+  "name": "rangel-videos",
+  "version": "1.0.0",
+  "description": "um site de upload de vídeos básico para o aprendizado. Feito por mim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielDaloco/rangel-videos.git"
+  },
+  "author": "GabrielDaloco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielDaloco/rangel-videos/issues"
+  },
+  "homepage": "https://github.com/GabrielDaloco/rangel-videos#readme",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
