@@ -1,0 +1,16 @@
+{
+  "name": "rangel-videos-front",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite src",
+    "build": "vite build src",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.0"
+  }
+}

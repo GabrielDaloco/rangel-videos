@@ -11,6 +11,16 @@ const port = 3000;
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
 ffmpeg.setFfprobePath(ffProbe.path)
 
+// Adicionar os cabeçalhos Access-Control-Allow-Origin
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
 //GET dos Vídeos da aba inicial
 app.get('/videos', async (req,res)=>{
     try{
