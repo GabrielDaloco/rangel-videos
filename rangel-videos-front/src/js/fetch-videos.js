@@ -13,8 +13,6 @@ async function getAllVideos(){
 async function constructVideos(){
     data = await getAllVideos()
 
-    console.log(data)
-
     for(let x = 0; x <= data.length; x++){
         const videoHTML = `
         <!-- Vídeo -->
