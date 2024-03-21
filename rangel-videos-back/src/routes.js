@@ -19,7 +19,13 @@ app.use((req, res, next) => {
       "Origin, X-Requested-With, Content-Type, Accept"
     );
     next();
-  });
+});
+
+//Pasta das imagens
+app.use('/images', express.static('imgs_videos/'));
+
+//Pasta dos vídeos
+app.use('/vids', express.static('videos/'));
 
 //GET dos Vídeos da aba inicial
 app.get('/videos', async (req,res)=>{
@@ -50,7 +56,7 @@ app.post('/video/upload', upload.single('video'), async (req,res) =>{
     try{
         const {videoName, videoDesc} = req.body
         const videoUrl = req.file.path
-        const imgUrl = 'img_videos/' + req.file.filename + '.png'
+        const imgUrl = 'images/' + req.file.filename + '.png'
 
         ffmpeg(videoUrl)
             .takeScreenshots({
