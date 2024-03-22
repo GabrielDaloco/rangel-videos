@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link href="./css/index.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rangel-videos</title>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <div id="header">
+
+            <script src="components/header.js"></script>
+
+        </div>
+
+        <span class="flex justify-center my-6"><a class="text-4xl"> Upload </a></span>
+
+        <div class="flex items-center justify-center">
+            <form class="">
+                <label for="picture_input" class="group w-[500px] aspect-video bg-gray-500
+                 flex items-center justify-center border-dashed border-4 rounded-md border-gray-700 cursor-pointer
+                 hover:bg-gray-600 hover:border-gray-800">
+                    <span class="text-gray-900 text-xl group-hover:text-gray-950" id="picture_image"></span>
+                </label>
+                <input type="file" accept="video/*" id="picture_input" class="hidden">
+
+                <script src="js/show-video.js"></script>
+
+                <br>
+                
+                <div class="flex flex-col">
+                    <label class="text-[18px]">Nome do vídeo</label>
+                    <input type="text" id="nomeVideo" name="nomeVideo" class="border-solid border-2 border-slate-700
+                     rounded-md h-8 bg-slate-200 text-xl pl-1">
+        
+                    <label class="text-[18px] mt-4">Descrição do Vídeo</label>
+                    <textarea id="descVideo" name="descVideo" class="border-solid border-2 border-slate-700
+                     rounded-md h-28 bg-slate-200 text-xl pl-1"></textarea>
+                </div>
+                
+                <span class="group flex justify-center items-center mt-10 ">
+                 <input class="group-hover:cursor-pointer bg-lime-500 border-solid border-2
+                 border-black rounded-md p-1 hover:cursor-pointer w-20 h-10 text-xl hover:bg-lime-600" type="submit" value="Upload">
+                </span>
+            </form>
+        </div>
+
+    </body>
+</html>
