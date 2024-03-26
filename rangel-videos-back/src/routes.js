@@ -11,6 +11,9 @@ const port = 3000;
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
 ffmpeg.setFfprobePath(ffProbe.path)
 
+//Usar o json do express
+app.use(express.json())
+
 // Adicionar os cabeçalhos Access-Control-Allow-Origin
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
@@ -54,24 +57,30 @@ app.get('/video/:id', async (req,res)=>{
 //POST do vídeo
 app.post('/video/upload', upload.single('video'), async (req,res) =>{
     try{
-        const {videoName, videoDesc} = req.body
-        const videoUrl = req.file.path
-        const imgUrl = 'images/' + req.file.filename + '.png'
-
-        ffmpeg(videoUrl)
-            .takeScreenshots({
-                count: 1,
-                folder: 'imgs_videos/',
-                filename: '%b'
-            });
-
-        await connection.query("insert into video (nome_video, desc_video, img_url, video_url) values (?,?,?,?)", 
-        [videoName, videoDesc, imgUrl, videoUrl])
-
-        res.status(201).json("Sucesso!")
+        if (!req.file){
+            console.log("File not uploaded.")
+            return res.status(500).json("Failure")
+        }else{
+            const {videoName, videoDesc} = req.body
+            const videoUrl = req.file.path
+            const imgUrl = 'images/' + req.file.filename + '.png'
+    
+            ffmpeg(videoUrl)
+                .takeScreenshots({
+                    count: 1,
+                    folder: 'imgs_videos/',
+                    filename: '%b'
+                });
+    
+            await connection.query("insert into video (nome_video, desc_video, img_url, video_url) values (?,?,?,?)", 
+            [videoName, videoDesc, imgUrl, videoUrl])
+    
+            res.status(201).json("Sucesso!")
+        }
     }
     catch(err){
         console.log(err)
+        res.status(500).json("Failure")
     }
 });
 

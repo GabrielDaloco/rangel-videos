@@ -17,7 +17,7 @@ async function constructVideos(){
         document.getElementById('videos').innerHTML = "<a class='text-5xl mt-10'>Não há vídeos</a>"
     }
     else{
-        for(let x = 0; x <= data.length; x++){
+        for(let x = 0; x <= data.length - 1; x++){
             const videoHTML = `
             <!-- Vídeo -->
             <div class="border-solid border-2 border-gray-500 rounded-lg flex-grow-1">

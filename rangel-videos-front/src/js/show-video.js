@@ -1,4 +1,4 @@
-const inputFile = document.querySelector("#picture_input");
+const inputFile = document.querySelector("#video");
 const videoImage = document.querySelector("#picture_image");
 const videoImageTxt = "Escolha um vídeo";
 videoImage.innerHTML = videoImageTxt;
