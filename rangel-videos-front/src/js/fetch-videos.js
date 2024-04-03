@@ -20,11 +20,11 @@ async function constructVideos(){
         for(let x = 0; x <= data.length - 1; x++){
             const videoHTML = `
             <!-- Vídeo -->
-            <div class="border-solid border-2 border-gray-500 rounded-lg flex-grow-1">
-                <img class="w-[340px] h-[200px] rounded-t-md" src="${'http://localhost:3000/' + data[x].img_url}" width="280" height="200">
-                <div class="p-2">
+            <div onclick="window.location='../video.html?v=${data[x].id}';" class="border-solid border-2 border-gray-500 rounded-lg flex-grow-1 max-w-[340px] cursor-pointer">
+                <img class="w-[340px] h-[200px] rounded-t-md" src="http://localhost:3000/${data[x].img_url}" width="280" height="200">
+                <div class="p-2 flex flex-col">
                   <a>${data[x].nome_video}</a><br>
-                  <a>${data[x].desc_video}</a>
+                  <a class="text-sm text-gray-500">${data[x].desc_video}</a>
                 </div>
             </div>
             `

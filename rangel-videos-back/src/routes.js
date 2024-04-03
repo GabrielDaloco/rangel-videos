@@ -62,10 +62,10 @@ app.post('/video/upload', upload.single('video'), async (req,res) =>{
             return res.status(500).json("Failure")
         }else{
             const {videoName, videoDesc} = req.body
-            const videoUrl = req.file.path
+            const videoUrl = 'vids/' + req.file.filename
             const imgUrl = 'images/' + req.file.filename + '.png'
     
-            ffmpeg(videoUrl)
+            ffmpeg(req.file.path)
                 .takeScreenshots({
                     count: 1,
                     folder: 'imgs_videos/',
