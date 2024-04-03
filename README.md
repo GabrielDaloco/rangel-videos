@@ -14,7 +14,7 @@ DB_DATABASE = <nome do banco de dados>
 ```
 npm i
 ```
-+ Crie o banco de dados utilizando o arquivo sql.
++ Crie o banco de dados utilizando o arquivo dbRangelVideos.sql.
 
 + Inicie o servidor no back end e inicie o front end, com o seguinte comando:
 ```
