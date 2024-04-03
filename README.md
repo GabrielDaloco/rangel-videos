@@ -14,12 +14,11 @@ DB_DATABASE = <nome do banco de dados>
 ```
 npm i
 ```
++ Crie o banco de dados utilizando o arquivo sql.
 
-+ Para iniciar o server no back end e iniciar o front end, digite o seguinte comando:
++ Inicie o servidor no back end e inicie o front end, com o seguinte comando:
 ```
 npm run dev
 ```
-
-+ Crie também o banco de dados com o arquivo sql.
 
 **Assim o site de upload de vídeos funcionará normalmente.**
