@@ -20,4 +20,6 @@ Para iniciar o server no back end e iniciar o front end, digite o seguinte coman
 npm run dev
 ```
 
+Crie também o banco de dados com o arquivo sql.
+
 Assim o site de upload de vídeos funcionará normalmente.
